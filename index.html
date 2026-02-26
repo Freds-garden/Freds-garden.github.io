@@ -263,7 +263,6 @@
       transition: background 0.3s;
       position: relative;
       overflow: hidden;
-      cursor: pointer;
     }
     .exp-card:hover { background: #1c1c1c; }
     .exp-card::after {
@@ -276,103 +275,6 @@
       transition: opacity 0.3s;
     }
     .exp-card:hover::after { opacity: 1; }
-
-    /* ── IMAGE OVERLAY ── */
-    .exp-img-overlay {
-      position: absolute;
-      inset: 0;
-      background: var(--card);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 10;
-    }
-    .exp-img-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .exp-img-overlay img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
-    .exp-img-overlay .close-btn {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      background: rgba(0,0,0,0.7);
-      border: 1px solid var(--gold);
-      padding: 6px 12px;
-      cursor: pointer;
-      z-index: 20;
-      text-transform: uppercase;
-      transition: all 0.2s;
-    }
-    .exp-img-overlay .close-btn:hover {
-      background: var(--gold);
-      color: #000;
-    }
-    .exp-img-placeholder {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      background: #0f0f0f;
-    }
-    .exp-img-placeholder .placeholder-icon {
-      font-size: 40px;
-      opacity: 0.4;
-    }
-    .exp-img-placeholder .placeholder-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      text-align: center;
-      padding: 0 24px;
-    }
-    .exp-img-placeholder .placeholder-hint {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--gold);
-      opacity: 0.6;
-      text-align: center;
-      padding: 0 24px;
-      line-height: 1.8;
-    }
-    .exp-card .photo-trigger {
-      position: absolute;
-      bottom: 14px;
-      right: 16px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .exp-card:hover .photo-trigger { opacity: 1; }
 
     .exp-company {
       font-family: 'DM Mono', monospace;
@@ -653,8 +555,7 @@
         Builder in fintech.
       </p>
       <div class="hero-links">
-        <a href="/cdn-cgi/l/email-protection#8fe9fdeaebe3e9e3e6facfe8e2eee6e3a1ece0e2" class="btn filled">Email Me</a>
-        <a href="https://linkedin.com/in/fred-liu-cfa/" target="_blank" class="btn">LinkedIn ↗</a>
+        <a href="https://linkedin.com/in/fred-liu-cfa/" target="_blank" class="btn filled">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-right">
@@ -669,10 +570,11 @@
   <div class="ticker">
     <div class="ticker-inner">
       <span class="ticker-item">Finance</span>
+      <span class="ticker-item">Accounting</span>
       <span class="ticker-item">Project Management</span>
-      <span class="ticker-item">AI & LLMs</span>
+      <span class="ticker-item">Vibe Code</span>
       <span class="ticker-item">Web3</span>
-      <span class="ticker-item">M&A Due Diligence</span>
+      <span class="ticker-item">M&A</span>
       <span class="ticker-item">FP&A</span>
       <span class="ticker-item">Python</span>
       <span class="ticker-item">SQL</span>
@@ -680,10 +582,11 @@
       <span class="ticker-item">Blockchain</span>
       <span class="ticker-item">Case Competitions</span>
       <span class="ticker-item">Finance</span>
+      <span class="ticker-item">Accounting</span>
       <span class="ticker-item">Project Management</span>
-      <span class="ticker-item">AI & LLMs</span>
+      <span class="ticker-item">Vibe Code</span>
       <span class="ticker-item">Web3</span>
-      <span class="ticker-item">M&A Due Diligence</span>
+      <span class="ticker-item">M&A</span>
       <span class="ticker-item">FP&A</span>
       <span class="ticker-item">Python</span>
       <span class="ticker-item">SQL</span>
@@ -699,25 +602,16 @@
     <h2 class="section-title">Where I've Built Things That Matter</h2>
     <div class="exp-grid">
 
-      <div class="exp-card" onclick="togglePhoto(this)">
+      <div class="exp-card">
         <div class="exp-company">Capital One</div>
         <div class="exp-role">Project Management Intern</div>
         <div class="exp-meta">Tech · Cloud · AI &nbsp;|&nbsp; Washington, D.C. &nbsp;|&nbsp; Sep 2025 – Jan 2026</div>
         <ul class="exp-bullets">
           <li>Accelerated internal "Concept-to-Code" lifecycle for high-priority feature backlogs, removing structural bottlenecks to reduce development time by an average of <strong>27% per project</strong>.</li>
         </ul>
-        <div class="photo-trigger">📷 View Photo</div>
-        <div class="exp-img-overlay">
-          <div class="exp-img-placeholder">
-            <div class="placeholder-icon">🏦</div>
-            <div class="placeholder-text">Capital One · Washington, D.C.</div>
-            <div class="placeholder-hint">Drop your photo here to replace this placeholder.<br>In your HTML, swap the &lt;div class="exp-img-placeholder"&gt;<br>with an &lt;img src="your-photo.jpg"&gt; tag.</div>
-          </div>
-          <div class="close-btn" onclick="closePhoto(event, this)">✕ Close</div>
-        </div>
       </div>
 
-      <div class="exp-card" onclick="togglePhoto(this)">
+      <div class="exp-card">
         <div class="exp-company">Coinbase</div>
         <div class="exp-role">Project Management Intern</div>
         <div class="exp-meta">AI · Finance · Web3 · Compliance &nbsp;|&nbsp; New York, NY &nbsp;|&nbsp; Jun – Sep 2025</div>
@@ -725,18 +619,9 @@
           <li>Trained LLM personas and implemented guardrails testing on multi-agent models deployed on Coinbase's platform, reaching <strong>~50M retail and institutional users</strong>.</li>
           <li>Built an internal financial data scraping tool mimicking Bloomberg functionalities — automating Bitcoin ETF price action and fund flow reports, cutting trading team overhead costs.</li>
         </ul>
-        <div class="photo-trigger">📷 View Photo</div>
-        <div class="exp-img-overlay">
-          <div class="exp-img-placeholder">
-            <div class="placeholder-icon">🪙</div>
-            <div class="placeholder-text">Coinbase · New York, NY</div>
-            <div class="placeholder-hint">Drop your photo here to replace this placeholder.<br>In your HTML, swap the &lt;div class="exp-img-placeholder"&gt;<br>with an &lt;img src="your-photo.jpg"&gt; tag.</div>
-          </div>
-          <div class="close-btn" onclick="closePhoto(event, this)">✕ Close</div>
-        </div>
       </div>
 
-      <div class="exp-card" onclick="togglePhoto(this)">
+      <div class="exp-card">
         <div class="exp-company">CliftonLarsonAllen (CLA)</div>
         <div class="exp-role">Financial Due Diligence Intern</div>
         <div class="exp-meta">M&A · Accounting &nbsp;|&nbsp; Bellevue, WA &nbsp;|&nbsp; Jan – Apr 2025</div>
@@ -744,17 +629,9 @@
           <li>Supported M&A deals team on <strong>3 due diligence engagements</strong> for private equity clients in the healthcare sector.</li>
           <li>Assembled and reviewed quality of earnings reports under two PE partners and their respective teams.</li>
         </ul>
-        <div class="photo-trigger">📷 View Photo</div>
-        <div class="exp-img-overlay">
-          <div class="exp-img-placeholder">
-            <div class="exp-img-overlay">
-              <img src="image_resources/RIICC219.jpg" alt="Fred at CLA">
-              <div class="close-btn" onclick="closePhoto(event, this)">✕ Close</div>          
-          <div class="close-btn" onclick="closePhoto(event, this)">✕ Close</div>
-        </div>
       </div>
 
-      <div class="exp-card" onclick="togglePhoto(this)">
+      <div class="exp-card">
         <div class="exp-company">NorthStar Energy</div>
         <div class="exp-role">FP&A Intern</div>
         <div class="exp-meta">Finance · Accounting &nbsp;|&nbsp; Seattle, WA &nbsp;|&nbsp; Oct 2023 – Sep 2024</div>
@@ -762,15 +639,6 @@
           <li>Pioneered a high-visibility inventory management project used by warehouse managers to drive efficiencies across <strong>$200M+ of inventory</strong>, resulting in <strong>$3M in cost savings</strong>.</li>
           <li>Developed a treasury dashboard managing <strong>$4B+ in cash flow</strong>, driving $20K in annual bank fee savings.</li>
         </ul>
-        <div class="photo-trigger">📷 View Photo</div>
-        <div class="exp-img-overlay">
-          <div class="exp-img-placeholder">
-            <div class="placeholder-icon">⚡</div>
-            <div class="placeholder-text">NorthStar Energy · Seattle, WA</div>
-            <div class="placeholder-hint">Drop your photo here to replace this placeholder.<br>In your HTML, swap the &lt;div class="exp-img-placeholder"&gt;<br>with an &lt;img src="your-photo.jpg"&gt; tag.</div>
-          </div>
-          <div class="close-btn" onclick="closePhoto(event, this)">✕ Close</div>
-        </div>
       </div>
 
     </div>
@@ -931,24 +799,11 @@
   <footer>
     <div class="footer-name">Fred Liu</div>
     <div class="footer-contact">
-      <a href="/cdn-cgi/l/email-protection#a6c0d4c3c2cac0cacfd3e6c1cbc7cfca88c5c9cb"><span class="__cf_email__" data-cfemail="b8decadddcd4ded4d1cdf8dfd5d9d1d496dbd7d5">[email&#160;protected]</span></a>
-      <a href="tel:4252401784">(425) 240-1784      <a href="tel:4252401784">(425) 240-1784</a>
       <a href="https://linkedin.com/in/fred-liu-cfa/" target="_blank">linkedin.com/in/fred-liu-cfa ↗</a>
       <a>Seattle, WA</a>
     </div>
   </footer>
 
-  <script>
-    function togglePhoto(card) {
-      const overlay = card.querySelector('.exp-img-overlay');
-      if (overlay) overlay.classList.toggle('active');
-    }
-    function closePhoto(event, btn) {
-      event.stopPropagation();
-      const overlay = btn.closest('.exp-img-overlay');
-      if (overlay) overlay.classList.remove('active');
-    }
-  </script>
 
 </body>
 </html>
